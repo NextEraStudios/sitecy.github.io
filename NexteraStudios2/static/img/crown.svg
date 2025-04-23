@@ -1,0 +1,14 @@
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Base rectangle with rounded corners -->
+  <rect x="46" y="335" width="420" height="50" rx="10" ry="10" fill="black"/>
+  
+  <!-- Crown with smoother curves -->
+  <path d="M256 70 
+           C256 70, 320 120, 380 190
+           C390 200, 435 160, 466 140
+           C466 140, 450 220, 437 255
+           L75 255
+           C75 255, 60 220, 46 140
+           C46 140, 80 160, 132 190
+           C190 120, 256 70, 256 70Z" fill="black"/>
+</svg>
