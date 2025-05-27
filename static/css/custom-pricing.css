@@ -106,29 +106,20 @@
 }
 
 .pricing-cards-container .el li {
-    /* profitable.css .el li styles (display flex, align-items) apply */
-    display: flex;
-    flex-direction: row; /* Override from profitable.css */
-    align-items: center;
+    display: grid; /* Use Grid for precise alignment */
+    grid-template-columns: auto 1fr; /* Icon column auto, text column takes remaining space */
+    align-items: start; /* Align items to the start of the grid cell (top) */
     gap: 10px; /* Space between icon and text */
     font-size: clamp(14px, 1.2rem, 16px); /* Adjust feature text size */
     color: inherit; /* Inherit from .el or .el:hover */
     transition: color 0.3s ease-in-out;
+    /* Remove flex-direction: row; as grid handles layout */
 }
-/* Ensure li items are left aligned if .el is text-align:center from profitable.css */
-/* The text-align: left on .el ul should handle this, but being explicit for li if needed */
-@media only screen and (min-width: 1000px) {
-    .pricing-cards-container .el ul {
-        /* text-align: left; /* Already set above */
-    }
-     .pricing-cards-container .el li {
-        /* justify-content: flex-start; /* If parent .el is centered */
-        /* align-items: center; /* Already set */
-    }
-}
-
 
 .pricing-cards-container .el li .feature-icon {
+    /* Ensure icon aligns with the first line of text if text wraps */
+    /* align-self: start; /* Already handled by align-items: start on li */
+    /* The width, height, flex-shrink, and filter styles remain the same */
     width: clamp(18px, 1.8vw, 22px);
     height: auto;
     flex-shrink: 0; /* Prevent icon from shrinking */
