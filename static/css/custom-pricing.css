@@ -1,0 +1,223 @@
+/* static/css/custom-pricing.css */
+.pricing-section-custom {
+    /* Inherits .section and .profitable styles */
+    padding-top: clamp(150px, 20vh, 220px); /* Increased top padding */
+    /* Add any specific overrides for the pricing section if needed */
+}
+
+.pricing-section-custom .title {
+    /* Styles from profitable.css .title are applied. */
+    /* Example: Adjust margin if needed for subtitle */
+    /* margin-bottom: 10px; */
+}
+
+.pricing-section-custom .subtitle {
+    text-align: center;
+    font-size: clamp(16px, 1.25rem, 20px);
+    color: var(--text-secondary, #6c757d); /* Fallback color */
+    margin-top: -0.5em; /* Adjust based on .title's bottom margin */
+    margin-bottom: clamp(40px, 4rem, 60px); /* Space before cards */
+}
+
+.pricing-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: clamp(20px, 2.5vw, 30px); /* Gap between cards */
+    padding: 0 clamp(15px, 3vw, 25px); /* Padding for the container */
+}
+
+.pricing-cards-container .el {
+    flex: 1 1 300px; /* Grow and shrink, base width 300px */
+    max-width: 380px; /* Max card width */
+    min-width: 270px; /* Match from .slider-profitable .swiper-slide */
+    display: flex;
+    flex-direction: column;
+    background: var(--black, #111111); /* Default black background */
+    color: var(--white, #ffffff); /* Default light text */
+    border-radius: clamp(10px, 1.25rem, 20px); /* from profitable.css .el */
+    padding: 0 clamp(20px, 3.125rem, 50px) clamp(30px, 3.125rem, 50px) clamp(20px, 3.125rem, 50px); /* from profitable.css .el */
+    line-height: 1.4; /* from profitable.css .el */
+		font-weight: bold; /* from profitable.css .el */
+		font-size: clamp(18px, 1.75rem, 28px); /* from profitable.css .el */
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.3s ease;
+    position: relative; /* For badge positioning on all cards if needed, or just .color */
+}
+
+.pricing-cards-container .el:hover {
+    transform: translateY(-5px); /* Subtle lift on hover for all cards */
+    background: radial-gradient(123% 83.51% at 85.59% 12.93%, #FFDDDD 0%, #D7C4FF 52.6%, #D7F0FF 100%);
+    color: var(--black, #1c1c1c); /* Dark text on gradient */
+}
+
+/* Remove .popular-hover specific styles as the hover is now general for .el */
+/* .pricing-cards-container .el.popular-hover { ... } */
+/* .pricing-cards-container .el.popular-hover:hover { ... } */
+
+
+.pricing-cards-container .el .head {
+    /* Styles from profitable.css .head (height, alignment, font-size for h3) apply */
+    /* Ensure it accommodates plan name and price */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically if height is fixed */
+    align-items: center; /* Center content horizontally */
+    text-align: center; /* Ensure text is centered */
+}
+
+.pricing-cards-container .el .head .h3 {
+    /* font-size from profitable.css .head applies. */
+    margin-bottom: clamp(8px, 1.5vh, 12px);
+    color: inherit; /* Inherit from .el or .el.popular-hover:hover */
+}
+
+.pricing-cards-container .el .head .plan-price {
+    font-size: clamp(32px, 5vw, 44px);
+    font-weight: bold;
+    color: var(--primary-accent, #ffffff); /* Make price stand out on black, e.g., orange/yellow */
+    margin-bottom: clamp(15px, 2.5vh, 25px);
+    line-height: 1.1;
+    transition: color 0.3s ease-in-out;
+}
+
+.pricing-cards-container .el:hover .head .plan-price {
+    color: var(--black, #1c1c1c); /* Price color on gradient hover */
+}
+
+.pricing-cards-container .el .head .plan-price small {
+    font-size: 0.4em;
+    font-weight: 300; /* Lighter weight */
+    color: var(--white, #f0f0f0); /* Light color for subtitle on black */
+    opacity: 0.8;
+    transition: color 0.3s ease-in-out;
+}
+
+.pricing-cards-container .el:hover .head .plan-price small {
+    color: var(--black, #333333); /* Subtitle color on gradient hover */
+    opacity: 0.8;
+}
+
+.pricing-cards-container .el ul {
+    /* profitable.css .el ul styles (flex-direction, gap) apply */
+    flex-grow: 1; /* Pushes button to the bottom */
+    text-align: left; /* Overrides text-align:center from .el on desktop if needed for list items */
+    padding-left: 0; /* Remove default ul padding */
+    list-style: none; /* Ensure no bullets */
+}
+
+.pricing-cards-container .el li {
+    /* profitable.css .el li styles (display flex, align-items) apply */
+    display: flex;
+    flex-direction: row; /* Override from profitable.css */
+    align-items: center;
+    gap: 10px; /* Space between icon and text */
+    font-size: clamp(14px, 1.2rem, 16px); /* Adjust feature text size */
+    color: inherit; /* Inherit from .el or .el:hover */
+    transition: color 0.3s ease-in-out;
+}
+/* Ensure li items are left aligned if .el is text-align:center from profitable.css */
+/* The text-align: left on .el ul should handle this, but being explicit for li if needed */
+@media only screen and (min-width: 1000px) {
+    .pricing-cards-container .el ul {
+        /* text-align: left; /* Already set above */
+    }
+     .pricing-cards-container .el li {
+        /* justify-content: flex-start; /* If parent .el is centered */
+        /* align-items: center; /* Already set */
+    }
+}
+
+
+.pricing-cards-container .el li .feature-icon {
+    width: clamp(18px, 1.8vw, 22px);
+    height: auto;
+    flex-shrink: 0; /* Prevent icon from shrinking */
+    /* Invert icon color for black background if needed, or use a white version */
+    filter: invert(1) grayscale(1) brightness(2); /* Example: make a black SVG white */
+}
+.pricing-cards-container .el:hover li .feature-icon {
+    filter: none; /* Reset filter for gradient background if original icon color is suitable */
+}
+
+.popular-badge {
+    position: absolute;
+    top: clamp(-15px, -2vh, -20px); /* Adjust based on card padding/font size */
+    left: 50%;
+    transform: translateX(-50%);
+    background: radial-gradient(123% 83.51% at 85.59% 12.93%, #FFDDDD 0%, #D7C4FF 52.6%, #D7F0FF 100%); /* Badge has gradient */
+    color: var(--black, #1c1c1c); /* Dark text on badge gradient */
+    padding: 0.4em 1.2em;
+    border-radius: 20px;
+    font-size: clamp(12px, 1.5vw, 14px);
+    font-weight: bold;
+    z-index: 10;
+    /* box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Optional: if gradient-custom doesn't have shadow */
+}
+
+/* Button styling */
+.pricing-cards-container .el .btn {
+    /* .profitable .el .btn provides base height, font-size, margin-top */
+    /* Ensure text color is light on black cards */
+    /* .btn-black from style.css should handle this if it sets text to white */
+}
+
+.pricing-cards-container .el .btn.btn-black {
+    background-color: var(--white, #fff); /* White button */
+    color: var(--black, #1c1c1c); /* Black text */
+    border: 1px solid var(--white, #fff);
+}
+.pricing-cards-container .el .btn.btn-black:hover {
+    background-color: transparent;
+    color: var(--white, #fff);
+}
+
+
+/* Styles for .btn.gradient-custom on .el cards */
+.pricing-cards-container .el .btn.gradient-custom {
+    /* Initial state (card is black) */
+    /* Assuming .gradient-custom has its own defined appearance */
+    /* If it needs specific styling for black background: */
+    /* background: var(--primary-accent, #ff8c00); */
+    /* color: var(--white, #fff); */
+    /* border: 1px solid var(--primary-accent, #ff8c00); */
+}
+
+.pricing-cards-container .el:hover .btn.gradient-custom {
+    /* Hover state (card has gradient) */
+    /* Ensure .gradient-custom button still looks good */
+    /* Example: if it needs a border or shadow for definition on gradient */
+    /* border: 1px solid rgba(0,0,0,0.2); */
+}
+
+/* Responsive adjustments for card layout */
+@media only screen and (max-width: 999.99px) {
+    .pricing-cards-container {
+        gap: clamp(15px, 2vw, 25px);
+    }
+    .pricing-cards-container .el {
+        /* Already flex: 1 1 300px; which works well for 2 columns if container is wide enough */
+        /* Or explicitly set to 2 columns: */
+        /* flex-basis: calc(50% - (clamp(15px, 2vw, 25px) / 2)); */
+    }
+    .pricing-section-custom .subtitle {
+        margin-bottom: clamp(30px, 3rem, 50px);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .pricing-cards-container .el {
+        flex-basis: 100%; /* 1 column */
+        max-width: none; /* Allow full width */
+    }
+    .pricing-section-custom .title {
+        font-size: clamp(36px, 10vw, 50px);
+    }
+    .pricing-section-custom .subtitle {
+        font-size: clamp(14px, 3.5vw, 18px);
+        margin-bottom: clamp(25px, 2.5rem, 40px);
+    }
+    .popular-badge {
+        font-size: clamp(11px, 2.5vw, 13px);
+        padding: 0.3em 1em;
+    }
+}
