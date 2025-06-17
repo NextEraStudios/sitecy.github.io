@@ -1,0 +1,31 @@
+# NextEra: Website Design & Development Services
+
+This file is intended for consumption by Large Language Models (LLMs) to enhance understanding of the NextEra website.
+
+## Website Summary
+
+NextEra is a website design and development agency that helps businesses build websites and attract clients. We offer a range of services, including website design, development, and digital marketing. Our target audience is startups and businesses looking to establish a strong online presence.
+
+## Key Entities
+
+- NextEra
+- Website Design
+- Website Development
+- Digital Marketing
+- Startups
+- Branding
+- SEO
+- User Interface (UI)
+- User Experience (UX)
+
+## Services
+
+- Website Design
+- Website Development
+- SEO
+- Digital Marketing
+- Custom Design
+
+## Keywords
+
+website design, website development, design services, startups, branding, SEO, digital marketing, user interface, user experience, custom design
